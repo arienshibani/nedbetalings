@@ -37,6 +37,7 @@
   .outputs /*Output fields from sliders*/ {
     text-align: center;
     border: none;
+    padding: 15px;
   }
 
   /*Text-info regarding loan */
@@ -68,8 +69,8 @@
     border-radius: 1.2ex;
     margin-right: 4px;
     padding: 1px;
-    color: rgba(116, 192, 139, 0.8);
-    background: white;
+    color: white;
+    background: rgba(116, 192, 139, 0.8);
     border: 1px solid rgba(116, 192, 139, 0.8);
     text-decoration: none;
   }
@@ -85,6 +86,7 @@
   .tooltip {
     position: relative;
     display: inline-block;
+    margin-left: 2%;
   }
 
   /* Tooltip text */
@@ -128,7 +130,7 @@
             class="u-full-width customSlider"
             type="range"
             step="50000"
-            min="1"
+            min="10000"
             max="10000000" />
         </label>
       </div>

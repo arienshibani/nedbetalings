@@ -27,8 +27,8 @@
         border-radius: 1.2ex;
         margin-right: 4px;
         padding: 1px;
-        color: rgba(116, 192, 139, 0.8);
-        background: white;
+        color: white;
+        background: rgba(116, 192, 139, 0.8);
         border: 1px solid rgba(116, 192, 139, 0.8);
         text-decoration: none;
     }
@@ -44,6 +44,7 @@
     .tooltip {
         position: relative;
         display: inline-block;
+        margin-left: 5%;
     }
 
     /* Tooltip text */
@@ -105,7 +106,7 @@
             <tr style="font-size: 100%">
                 <td name="Dato">{payment.dato}</td>
                 <td name="Restgjeld">
-                    {formatPrettyNumber(Math.ceil(payment.restgjeld))}
+                    {formatPrettyNumber(Math.ceil(payment.restgjeld))}kr
                 </td>
                 <td name="Terminbeløp">
                     {formatPrettyNumber(Math.ceil(payment.total))}kr
