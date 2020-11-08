@@ -61,19 +61,21 @@
         font-weight: normal;
         z-index: 1;
 
-        @media (max-width: 400px) {
-            .tooltip .tooltiptext {
-                width: 30vw;
-                background-color: rgb(14 14 14 / 90%);
-                font-size: 75%;
-                color: #fff;
-                text-align: center;
-                padding: 10px 18px;
-                border-radius: 6px;
-                position: absolute;
-                font-weight: normal;
-                z-index: 1;
-            }
+    }
+
+    @media (max-width: 400px) {
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 30vw;
+            background-color: rgb(14 14 14 / 90%);
+            font-size: 75%;
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px;
+            border-radius: 6px;
+            position: absolute;
+            font-weight: normal;
+            z-index: 1;
         }
     }
 
