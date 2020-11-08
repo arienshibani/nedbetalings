@@ -18,23 +18,29 @@
     <thead>
         <tr>
             <th>Dato</th>
+            <th>Å Betale</th>
+            <th>Betjening</th>
             <th>Restgjeld</th>
-            <th>Innbetaling</th>
-            <th>Gebyr</th>
-            <th>Renter</th>
-            <th>Total</th>
+            <th>Gebyr og Renter</th>
         </tr>
     </thead>
 
     {#if paymentObjects != undefined}
         {#each paymentObjects.nedbetalingsplan.innbetalinger as payment}
             <tr style="font-size: 100%">
-                <td>{payment.dato}</td>
-                <td>{formatPrettyNumber(Math.ceil(payment.restgjeld))}kr</td>
-                <td>{formatPrettyNumber(Math.ceil(payment.innbetaling))}kr</td>
-                <td>{formatPrettyNumber(Math.ceil(payment.gebyr))}kr</td>
-                <td>{formatPrettyNumber(Math.ceil(payment.renter))}kr</td>
-                <td>{formatPrettyNumber(Math.ceil(payment.total))}kr</td>
+                <td name="Dato">{payment.dato}</td>
+                <td name="Å betale">
+                    {formatPrettyNumber(Math.ceil(payment.total))}kr
+                </td>
+                <td name="Betjening">
+                    {formatPrettyNumber(Math.ceil(payment.innbetaling))}kr
+                </td>
+                <td name="Restgjeld">
+                    {formatPrettyNumber(Math.ceil(payment.restgjeld))}
+                </td>
+                <td name="Renter/Gebyr">
+                    {formatPrettyNumber(Math.ceil(payment.gebyr + payment.renter))}kr
+                </td>
             </tr>
         {/each}
     {/if}

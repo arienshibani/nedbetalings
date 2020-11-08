@@ -34,15 +34,17 @@
 </script>
 
 <style>
-  .outputs {
+  .outputs /*Output fields from sliders*/ {
     text-align: center;
     border: none;
   }
 
+  /*Text-info regarding loan */
   .loanOverview {
     margin-top: 5rem;
   }
 
+  /*Input field for loan amount. */
   .numberInputLoanAmount {
     width: 100px;
     text-align: center;
@@ -50,6 +52,59 @@
     font-size: 100%;
     font-family: "Work Sans", sans-serif;
     font-weight: bold;
+  }
+
+  /*Info-popups on hover*/
+  .infolink:before {
+    content: "?";
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 1.8ex;
+    height: 1.8ex;
+    font-size: 1.4ex;
+    line-height: 1.8ex;
+    border-radius: 1.2ex;
+    margin-right: 4px;
+    padding: 1px;
+    color: rgba(116, 192, 139, 0.8);
+    background: white;
+    border: 1px solid rgba(116, 192, 139, 0.8);
+    text-decoration: none;
+  }
+
+  .infolink:hover:before {
+    color: white;
+    background: rgba(116, 192, 139, 0.8);
+    border-color: white;
+    text-decoration: none;
+  }
+
+  /* Tooltip container */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 30vw;
+    background-color: rgb(14 14 14 / 90%);
+    font-size: 90%;
+    color: #fff;
+    text-align: center;
+    padding: 25px 20px;
+    border-radius: 6px;
+    position: absolute;
+    font-weight: normal;
+    z-index: 1;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
   }
 </style>
 
@@ -93,22 +148,6 @@
     </div>
 
     <div class="row">
-      <div class="columns six">
-        <label>Lånegebyr
-          <input
-            bind:value={loanFee}
-            class="u-full-width customSlider"
-            type="range"
-            step="10"
-            min="0"
-            max="1000" />
-        </label>
-      </div>
-
-      <div class="columns six outputs"><b>{loanFee} kr</b></div>
-    </div>
-
-    <div class="row">
       <div class="columns six ">
         <label>Nedbetalingstid
           <input
@@ -124,7 +163,34 @@
 
     <div class="row">
       <div class="columns six">
+        <label>Termingebyr
+          <div class="infolink tooltip" href="#">
+            <span class="tooltiptext">Termingebyr skal dekke kostnadene utlåner
+              har ved å administrere lånet og ved innkreving av terminbeløpene.
+              Beløpet varierer.</span>
+          </div>
+          <input
+            bind:value={loanFee}
+            class="u-full-width customSlider"
+            type="range"
+            step="10"
+            min="0"
+            max="150" />
+        </label>
+      </div>
+
+      <div class="columns six outputs"><b>{loanFee} kr</b></div>
+    </div>
+
+    <div class="row">
+      <div class="columns six">
         <label>Nominell Rente
+          <div class="infolink tooltip">
+            <span class="tooltiptext">Nominell rente er rentesatsen på lånet før
+              gebyrer, og er vanligvis oppgitt som en årlig rente (pro anno,
+              eller p.a., som betyr per år). Effektiv rente er nominell rente
+              pluss gebyrer og andre kostnader.</span>
+          </div>
           <input
             bind:value={interestRateInput}
             class="u-full-width customSlider"
