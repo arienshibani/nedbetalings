@@ -43,6 +43,8 @@
   /*Text-info regarding loan */
   .loanOverview {
     margin-top: 5rem;
+    margin-left: 1%;
+    margin-right: 1%;
   }
 
   /*Input field for loan amount. */
