@@ -40,4 +40,7 @@
     {/if}
     <tbody />
 </table>
+<footer style="text-align: center; margin-top: 75;">
+    <a href="https://github.com/arienshibani/nedbetalings">Github</a>
+</footer>
 <div />

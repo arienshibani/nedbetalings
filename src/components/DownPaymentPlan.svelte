@@ -76,7 +76,13 @@
     }
 </script>
 
-<div>
+<style>
+    .tableArea {
+        margin-bottom: 120px;
+    }
+</style>
+
+<div class="tableArea">
     <button type="button" on:click={postLoan}>
         {showTable ? 'Skjul Nedbetalingsplan' : 'Vis Nedbetalingsplan'}
     </button>

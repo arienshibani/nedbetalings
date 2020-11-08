@@ -4,7 +4,7 @@
 
   // Variables
   let years = 15;
-  let loanAmount = 5500000;
+  let loanAmount = 2500000;
   let interestRateInput = 250;
   let loanFee = 50;
 
@@ -21,7 +21,8 @@
     (loanAmount *
       Math.pow(1 + monthlyInterestRate, totalPayments) *
       monthlyInterestRate) /
-    (Math.pow(1 + monthlyInterestRate, totalPayments) - 1);
+      (Math.pow(1 + monthlyInterestRate, totalPayments) - 1) +
+    loanFee;
   $: totalPaid = monthlyPayment * totalPayments;
   $: interestPaid = totalPaid - loanAmount;
 
@@ -137,15 +138,15 @@
     </div>
 
     <h4 class="loanOverview">
-      Ved å betale
+      Du kan få et lån på
+      <b>{formattedLoanAmout}</b>
+      kr hvis du betaler
       <b>{formattedMonthlyPaiment}</b>
       kr i måneden over
       <b>{years * 12}</b>
-      termin, vil du få et lån på
-      <b>{formattedLoanAmout}</b>
-      kr. Total kostnad for dette lånet blir
+      termin. Total kostnad for dette lånet blir
       <b>{formattedInterestPaid}</b>
-      kr
+      kr.
     </h4>
 
     <br />

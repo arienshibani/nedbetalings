@@ -18,7 +18,4 @@
 <main>
 	<header class="topNav" />
 	<LoanCalculator />
-	<footer style="margin-top: 50px; margin-left: 10px;">
-		<a href="https://github.com/arienshibani/nedbetalings">Github</a>
-	</footer>
 </main>
