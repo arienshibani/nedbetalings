@@ -9,7 +9,7 @@ Live Preview: http://nedbetalingsplan.surge.sh/
 
 ## Get started:
 
-Klon repo og installer dependancies:
+Installer dependancies:
 
 ```bash
 cd nedbetalings
