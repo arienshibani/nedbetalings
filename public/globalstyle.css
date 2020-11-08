@@ -1,140 +1,92 @@
-	html{
-		background: rgb(209,210,194 / 20%);
-  }
-  
-  	body {
-		margin: 0px;
-	}
-
-
-.forms {
-
-    padding: 25px 50px;
-    max-width: 69%;
-
+input[type=range].customSlider {
+  width: 100%;
+  margin: 4.5px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+input[type=range].customSlider:focus {
+  outline: none;
+}
+input[type=range].customSlider::-webkit-slider-runnable-track {
+  background: rgba(116, 192, 139, 0.8);
+  border: 0.2px solid rgba(1, 1, 1, 0);
+  border-radius: 1.3px;
+  width: 100%;
+  height: 11px;
+  cursor: pointer;
+}
+input[type=range].customSlider::-webkit-slider-thumb {
+  margin-top: -4.7px;
+  width: 20px;
+  height: 20px;
+  background: #74c08b;
+  border: 0px solid rgba(255, 0, 30, 0);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type=range].customSlider:focus::-webkit-slider-runnable-track {
+  background: #bae0c6;
+}
+input[type=range].customSlider::-moz-range-track {
+  background: rgba(116, 192, 139, 0.8);
+  border: 0.2px solid rgba(1, 1, 1, 0);
+  border-radius: 1.3px;
+  width: 100%;
+  height: 11px;
+  cursor: pointer;
+}
+input[type=range].customSlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #74c08b;
+  border: 0px solid rgba(255, 0, 30, 0);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+input[type=range].customSlider::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 4.5px 0;
+  color: transparent;
+  width: 100%;
+  height: 11px;
+  cursor: pointer;
+}
+input[type=range].customSlider::-ms-fill-lower {
+  background: #408e58;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+  border-radius: 2.6px;
+}
+input[type=range].customSlider::-ms-fill-upper {
+  background: rgba(116, 192, 139, 0.8);
+  border: 0.2px solid rgba(1, 1, 1, 0);
+  border-radius: 2.6px;
+}
+input[type=range].customSlider::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: #74c08b;
+  border: 0px solid rgba(255, 0, 30, 0);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+input[type=range].customSlider:focus::-ms-fill-lower {
+  background: rgba(116, 192, 139, 0.8);
+}
+input[type=range].customSlider:focus::-ms-fill-upper {
+  background: #bae0c6;
 }
 
-  .section{
-    margin-bottom: 30px;
+@supports (-ms-ime-align:auto) {
+  /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  input[type=range].customSlider {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/
   }
-
-  .outputs {
-    padding: 10px;
-  }
-
-  .button {
-    border: 3px solid;
-    margin: 5px;
-  }
-
-  input[type="number"]:focus {
-   border: none;
-  }
-
-  input[type="number"]{
-    /* width: 37%; */
-    text-align: right;
-    background-color: #f0f8ff00;
-    border: none;
-    font-family: "Work Sans", sans-serif;
-    width: 123%;
-    width: 63%;
-    font-weight: bold;
-  }
-
-  input[type="range"] {
-    width: 100%;
-    margin: 7.6px 0;
-    background-color: transparent;
-    -webkit-appearance: none;
-  }
-
-  input[type="range"]:focus {
-    outline: none;
-  }
-
-  input[type="range"]::-webkit-slider-runnable-track {
-    background: rgba(255, 212, 160, 0.2);
-    border: 0.3px solid rgba(1, 0, 1, 0.3);
-    border-radius: 25px;
-    width: 100%;
-    height: 7.8px;
-    cursor: pointer;
-  }
-
-  input[type="range"]::-webkit-slider-thumb {
-    margin-top: -7.9px;
-    width: 12px;
-    height: 23px;
-    background: #f9fafc;
-    border: 1.9px solid #000000;
-    border-radius: 50px;
-    cursor: pointer;
-    -webkit-appearance: none;
-  }
-
-  input[type="range"]:focus::-webkit-slider-runnable-track {
-    background: #ffe0ba;
-  }
-
-  input[type="range"]::-moz-range-track {
-    background: rgba(255, 212, 160, 0.2);
-    border: 0.3px solid rgba(1, 0, 1, 0.3);
-    border-radius: 25px;
-    width: 100%;
-    height: 7.8px;
-    cursor: pointer;
-  }
-
-  input[type="range"]::-moz-range-thumb {
-    width: 12px;
-    height: 23px;
-    background: #f9fafc;
-    border: 1.9px solid #000000;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-
-  input[type="range"]::-ms-track {
-    background: transparent;
-    border-color: transparent;
-    border-width: 8.6px 0;
-    color: transparent;
-    width: 100%;
-    height: 7.8px;
-    cursor: pointer;
-  }
-
-  input[type="range"]::-ms-fill-lower {
-    background: #ffc886;
-    border: 0.3px solid rgba(1, 0, 1, 0.3);
-    border-radius: 50px;
-  }
-
-  input[type="range"]::-ms-fill-upper {
-    background: rgba(255, 212, 160, 0.2);
-    border: 0.3px solid rgba(1, 0, 1, 0.3);
-    border-radius: 50px;
-  }
-
-  input[type="range"]:focus::-ms-fill-lower {
-    background: rgba(255, 212, 160, 0.2);
-  }
-
-  input[type="range"]:focus::-ms-fill-upper {
-    background: #ffe0ba;
-  }
-
-    @media only screen and (max-width: 1111px) {
-    .forms {
-      max-width: 100%;
-    }
-
-    html{
-		  background: rgb(251,251,249);
-    }
-  }
-
-.columns{
-  margin-left: 0%;
 }

@@ -26,11 +26,20 @@
     ) => {
         let today = new Date();
 
-        today = addYears(today, yearsToAdd);
-        today = addMonths(today, monthsToAdd);
-        today = addDays(today, daysToAdd);
+        if (yearsToAdd > 0) {
+            today = addYears(today, yearsToAdd);
+        }
 
-        return format(today, "yyyy-dd-mm");
+        if (monthsToAdd > 0) {
+            today = addMonths(today, monthsToAdd);
+        }
+
+        if (daysToAdd > 0) {
+            today = addDays(today, daysToAdd);
+        }
+
+        return today.toISOString().slice(0, 10);
+        s;
     };
 
     async function postLoan() {

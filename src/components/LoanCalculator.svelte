@@ -6,6 +6,7 @@
   let years = 15;
   let loanAmount = 5500000;
   let interestRateInput = 250;
+  let loanFee = 50;
 
   // Makes large integers more readable by adding spacing between every 3d digit.
   const formatPrettyNumber = (largeInteger) => {
@@ -34,10 +35,20 @@
 <style>
   .outputs {
     text-align: center;
+    border: none;
   }
 
   .loanOverview {
     margin-top: 15px;
+  }
+
+  .numberInputLoanAmount {
+    width: 100px;
+    text-align: center;
+    border: none;
+    font-size: 100%;
+    font-family: "Work Sans", sans-serif;
+    font-weight: bold;
   }
 </style>
 
@@ -58,23 +69,42 @@
         <label>Ønsket lånebeløp (NOK)
           <input
             bind:value={loanAmount}
-            class="u-full-width"
+            class="u-full-width customSlider"
             type="range"
+            step="50000"
             min="1"
             max="10000000" />
         </label>
       </div>
 
       <div class="columns six">
-        <label>
+        <div style="text-align: center">
+          <label>
+            <input
+              bind:value={loanAmount}
+              class="u-full-width numberInputLoanAmount"
+              type="number"
+              step="50000"
+              min="1" />
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns six">
+        <label>Lånegebyr
           <input
-            bind:value={loanAmount}
-            class="u-full-width"
-            type="number"
-            step="50000"
-            min="1" />
+            bind:value={loanFee}
+            class="u-full-width customSlider"
+            type="range"
+            step="10"
+            min="0"
+            max="1000" />
         </label>
       </div>
+
+      <div class="columns six outputs"><b>{loanFee} kr</b></div>
     </div>
 
     <div class="row">
@@ -82,7 +112,7 @@
         <label>Nedbetalingstid
           <input
             bind:value={years}
-            class="u-full-width"
+            class="u-full-width customSlider"
             type="range"
             min="1"
             max="35" />
@@ -96,7 +126,7 @@
         <label>Nominell Rente
           <input
             bind:value={interestRateInput}
-            class="u-full-width"
+            class="u-full-width customSlider"
             type="range"
             min="1"
             max="1000"
@@ -120,7 +150,7 @@
 
     <br />
     <div class="sixteen columns">
-      <DownPaymentTable {loanAmount} {interestRate} {years} />
+      <DownPaymentTable {loanAmount} {interestRate} {years} {loanFee} />
     </div>
   </div>
 </main>
