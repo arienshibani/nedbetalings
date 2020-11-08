@@ -35,6 +35,10 @@
   .outputs {
     text-align: center;
   }
+
+  .loanOverview {
+    margin-top: 15px;
+  }
 </style>
 
 <main>
@@ -52,22 +56,36 @@
     <div class="row">
       <div class="columns six">
         <label>Ønsket lånebeløp (NOK)
-          <input bind:value={loanAmount} class="u-full-width" type="range" min="1" max="10000000" />
+          <input
+            bind:value={loanAmount}
+            class="u-full-width"
+            type="range"
+            min="1"
+            max="10000000" />
         </label>
       </div>
-      <label>
-        <div class="columns six">
-          <input bind:value={loanAmount} class="u-full-width" type="number" step="50000" min="1" />
-        </div>
-      </label>
+
+      <div class="columns six">
+        <label>
+          <input
+            bind:value={loanAmount}
+            class="u-full-width"
+            type="number"
+            step="50000"
+            min="1" />
+        </label>
+      </div>
     </div>
-
-
 
     <div class="row">
       <div class="columns six ">
         <label>Nedbetalingstid
-          <input bind:value={years} class="u-full-width" type="range" min="1" max="35" />
+          <input
+            bind:value={years}
+            class="u-full-width"
+            type="range"
+            min="1"
+            max="35" />
         </label>
       </div>
       <div class="columns six outputs"><b>{years} År</b></div>
@@ -76,23 +94,26 @@
     <div class="row">
       <div class="columns six">
         <label>Nominell Rente
-          <input bind:value={interestRateInput} class="u-full-width" type="range" min="1" max="1000"
+          <input
+            bind:value={interestRateInput}
+            class="u-full-width"
+            type="range"
+            min="1"
+            max="1000"
             id="interest-slider" />
         </label>
       </div>
       <div class="columns six outputs"><b>{interestRate} %</b></div>
     </div>
 
-    <br />
-
-    <h4>
+    <h4 class="loanOverview">
       Ved å betale
       <b>{formattedMonthlyPaiment}</b>
-      kr i måneden, over
-      <b>{years*12}</b>
+      kr i måneden over
+      <b>{years * 12}</b>
       termin, vil du få et lån på
       <b>{formattedLoanAmout}</b>
-      kr. Total kostnad for dette lånet blir på
+      kr. Total kostnad for dette lånet blir
       <b>{formattedInterestPaid}</b>
       kr
     </h4>

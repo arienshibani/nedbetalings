@@ -2,7 +2,14 @@
     export let paymentObjects;
 </script>
 
-<table class="u-full-width">
+<style>
+    .downpaymentTable {
+        max-height: 200px;
+    }
+</style>
+
+<divclass class="downpaymentTable" />
+<table class="u-full-width ">
     <thead>
         <tr>
             <th>Dato</th>
@@ -28,3 +35,4 @@
     {/if}
     <tbody />
 </table>
+<div />
