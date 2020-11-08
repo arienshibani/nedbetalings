@@ -1,6 +1,6 @@
 <script>
   //Downpayment plan API request:
-  import DownPaymentTable from "./DownPaymentPlan.svelte";
+  import DownPaymentTable from "./PaymentPlanButton.svelte";
 
   // Variables
   let years = 15;
@@ -165,9 +165,10 @@
       <div class="columns six">
         <label>Termingebyr
           <div class="infolink tooltip" href="#">
-            <span class="tooltiptext">Termingebyr skal dekke kostnadene utlåner
-              har ved å administrere lånet og ved innkreving av terminbeløpene.
-              Beløpet varierer.</span>
+            <span class="tooltiptext">Normalt legger banken til et lite beløp på
+              toppen av det du betaler av avdrag og renter på lånet, hver måned.
+              Termingebyret dekker derfor administrasjonskostnadene som banken
+              bruker for å betjene lånet ditt.</span>
           </div>
           <input
             bind:value={loanFee}
@@ -210,7 +211,7 @@
       <b>{formattedMonthlyPaiment}</b>
       kr i måneden over
       <b>{years * 12}</b>
-      termin. Total kostnad for dette lånet blir
+      terminer. Total kostnad for dette lånet blir
       <b>{formattedInterestPaid}</b>
       kr.
     </h4>
