@@ -39,7 +39,7 @@
   }
 
   .loanOverview {
-    margin-top: 15px;
+    margin-top: 5rem;
   }
 
   .numberInputLoanAmount {
@@ -55,7 +55,7 @@
 <main>
   <div class="container forms section">
     <div class="row">
-      <h2>Nedbetalings <b>Kalkulator</b></h2>
+      <h2 style="margin-top: 5rem;">Nedbetalings <b>Kalkulator</b></h2>
       <p>
         Med nedbetalings kalkulatoren kan du enkelt beregne kostnadene for ditt
         lån, og få en oversikt over nedbetalingsplanen. Faktiske lånekostnader
