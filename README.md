@@ -9,10 +9,10 @@ Live Preview: http://nedbetalingsplan.surge.sh/
 
 ## Get started:
 
-Installer dependancies:
+Klon repo og installer dependancies:
 
 ```bash
-cd svelte-app
+cd nedbetalings
 npm install
 ```
 
