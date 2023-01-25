@@ -1,5 +1,8 @@
 # Nedbetalings Kalkulator
 
+![image](https://user-images.githubusercontent.com/22197324/214567232-33a4b5f4-5999-43d7-b670-c3316c52f0e7.png)
+
+
 Webapp bygd med [Svelte](https://svelte.dev/) som lar brukeren kalkulere kostnadene rundt et lån og tilbyr en nedbetalingsplan hentet fra Stacc sitt API. 
 
 Stacc Kodeoppgave Høsten 2020
